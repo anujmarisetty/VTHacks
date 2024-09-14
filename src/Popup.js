@@ -1,16 +1,14 @@
 import React from 'react';
 import './Popup.css';
 
-const Popup = ({ selectedDay, closePopup }) => {
+const Popup = ({ selectedDate, closePopup }: { selectedDate: Date; closePopup: () => void }) => {
   return (
     <div className="popup">
-      <div className="popup-content">
-        <h3>Selected Day: {selectedDay}</h3>
-        <h2>Item: </h2>
-        <h2>Cal: </h2>
-        <button onClick={closePopup}>Close</button>
-      </div>
-    </div>
+          <div className="popup-content">
+            <h3>Selected Date: {selectedDate.toDateString()}</h3>
+            <button onClick={closePopup}>Close</button>
+          </div>
+        </div>
   );
 };
 
