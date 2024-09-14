@@ -8,6 +8,7 @@ type ValuePiece = Date | null;
 type Value = ValuePiece | [ValuePiece, ValuePiece];
 
 function Popup({ selectedDate, closePopup }: { selectedDate: Date; closePopup: () => void }) {
+  
   return (
     <div className="popup">
       <div className="popup-content">
@@ -22,6 +23,8 @@ function MyApp() {
   const [value, onChange] = useState<Value>(new Date());
   const [showPopup, setShowPopup] = useState(false); // Track popup visibility
   const [selectedDate, setSelectedDate] = useState<Date | null>(null); // Track selected date
+
+
 
   const handleDateChange = (newValue: Value) => {
     if (newValue instanceof Date) {
